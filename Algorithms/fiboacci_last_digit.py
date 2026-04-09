@@ -24,4 +24,10 @@ def fib(n,k=1):
     return a     
 
 
-print(fib(20))
+
+
+if __name__ == "__main__":
+
+    n = int(input())
+
+    print(fib(n))

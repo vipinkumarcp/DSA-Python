@@ -13,4 +13,8 @@ def findgcd(a: int , b: int):
 
 if __name__ == "__main__":
 
-    print(findgcd(20,10))
+    a,b = map(int, input().split())
+
+ 
+
+    print(findgcd(a,b))
