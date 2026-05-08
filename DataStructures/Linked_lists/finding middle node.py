@@ -36,6 +36,7 @@ class LinkedList:
         if not self.head:
             self.head = new_node
         else:
+
             new_node.next_node = self.head
             self.head = new_node
 
