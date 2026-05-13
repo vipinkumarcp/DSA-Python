@@ -91,6 +91,8 @@ linked_list.insert_start(3)
 linked_list.insert_start(7)
 linked_list.insert_end(18)
 linked_list.insert_end(10)
+
+
 linked_list.insert_start('Adam')
 linked_list.traverse()
 print('size:', linked_list.sizeOfList())
