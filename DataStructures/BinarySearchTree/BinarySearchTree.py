@@ -16,6 +16,78 @@ class BinarySearchTree:
         self.root = None
 
 
+    def remove(self,data):
+
+        if self.root:
+            self.remove_node(data,self.root)
+
+
+    def remove_node(self,data,node):
+        #first we have find which node to remove
+
+        if node is None:
+            return
+        
+        if data < node.data:
+
+            self.remove_node(data,node.left_node)
+
+
+        elif data > node.data:
+        
+            self.remove_node(data,node.right_node)
+
+        else:
+
+            #we have found the node to remove
+            #there are 3 options
+            #leaf node case
+            if node.left_node is None and node.right_node is None:
+                print("Removing the leaf node %d" % node.data)
+                parent = node.parent
+                if parent is not None and parent.left_node == node:
+                    parent.left_node = None
+                if parent is not None and parent.right_node == node:
+                    parent.right_node = None
+                if parent is None:
+                    self.root = None  
+                del node
+
+            #when there is a single child
+            elif node.left_node is None and node.right_node is not None:
+                print("Removing a node with sigle right child %d" % node.data)
+                parent = node.parent
+
+                if parent is not None and parent.left_node == node:
+
+                    parent.left_node = node.right_node
+
+                if parent is not None and parent.right_node == node:
+                    
+                    parent.right_node = node.right_node
+
+                if parent is None:
+                    self.root = None  
+
+                node.right_node.parent = parent
+                del node
+
+
+
+
+
+
+
+                
+                
+
+
+
+
+
+
+
+
     def insert(self,data):
 
         #if first node
