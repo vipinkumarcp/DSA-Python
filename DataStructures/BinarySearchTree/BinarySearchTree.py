@@ -48,5 +48,74 @@ class BinarySearchTree:
                 node.right_node = Node(data,node)
 
 
+    def get_min(self):
+        if self.root:
+            return self.get_min_value(self.root)
+
+    def get_min_value(self,node):
+
+        if node.left_node:
+            return self.get_min_value(node.left_node)
+        #return the left most item that is min vale
+        return node.data
+    
+
+    def get_max(self):
+        if self.root:
+            return self.get_max_value(self.root)
+
+    def get_max_value(self,node):
+
+        if node.right_node:
+            return self.get_max_value(node.right_node)
+        #return the RIGHT most item that is mAX vale
+        return node.data
+    
+
+    def traverse(self):
+
+        if self.root:
+            return self.traverse_in_order(self.root)
+
+
+    #it has O(N) linera running time complexity
+    def traverse_in_order(self,node):
+
+        if node.left_node:
+            self.traverse_in_order(node.left_node)
+
+        print(node.data)
+
+        if node.right_node:
+            self.traverse_in_order(node.right_node)
+
+
+
+if __name__ == '__main__':
+
+    bst = BinarySearchTree()
+    bst.insert(10)
+    bst.insert(9)
+    bst.insert(8)
+    bst.insert(6)
+    bst.insert(7)
+    bst.insert(11)
+    bst.insert(12)
+    bst.insert(-5)
+
+    bst.traverse()
+
+    print("max value",bst.get_max())
+    print("min value",bst.get_min())
+
+
+
+
+
+
+
+
+
+
 
 
