@@ -73,21 +73,6 @@ class BinarySearchTree:
                 del node
 
 
-
-
-
-
-
-                
-                
-
-
-
-
-
-
-
-
     def insert(self,data):
 
         #if first node
