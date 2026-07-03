@@ -18,6 +18,7 @@ class Stack:
         data = self.stack[-1]  #this synstax return last item in array
         del self.stack[-1]   #remove last stack
         return data
+        
     #retrun last item
 
     def peek(self):
