@@ -1,32 +1,24 @@
 
+
 def naive_search(pattern,text):
 
     m = len(pattern)
-    n =  len(text)
-
-#this operation takes O(n)  
+    n = len(text)
 
     for i in range(n-m+1):
 
-        #track the letters in the pattern (starting 0)
-        #from left to right
-
         j = 0
 
-        #consider all the letters of the pattern o(m)
-        #this approch take o(m*n)
-        while j<m:
+        while j < m :
 
             if text[i+j] != pattern[j]:
                 break
 
-            #consider next character
-            j = j + 1
+            j = j +1
 
-        if j == m:
+            if m == j:
 
-            print("Found match at index ", i)
-
+                print(f"found at {i} ")
 
 
 if __name__ == '__main__':
