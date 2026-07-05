@@ -14,7 +14,8 @@ class LRUCacheTests(unittest.TestCase):
         cache.put(2, 20)
         cache.put(3, 30)
 
-        self.assertEqual(cache.get(1), -1)
+        self.assertEqual(cache.get
+                         (1), -1)
         self.assertEqual(cache.get(2), 20)
         self.assertEqual(cache.get(3), 30)
 
